@@ -7675,6 +7675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gamePlayingTimerMax: 90
+  _countdownToStartTimer: 3
 --- !u!1 &982281236
 GameObject:
   m_ObjectHideFlags: 0

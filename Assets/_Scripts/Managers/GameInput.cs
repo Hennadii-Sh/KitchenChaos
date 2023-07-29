@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GameInput : MonoBehaviour
+public class GameInput : Singleton<GameInput>
 {
     private const string PLAYER_PREFS_BINDINGS = "InputBindings";
-
-    public static GameInput Instance { get; private set; }
 
     public event EventHandler OnInteractAction;
     public event EventHandler OnInteractAlternateAction;
@@ -31,11 +29,9 @@ public class GameInput : MonoBehaviour
 
     private PlayerInputActions _playerInputActions;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance != null)
-            Destroy(this);
-        Instance = this;
+        base.Awake();
 
         _playerInputActions = new PlayerInputActions();
 

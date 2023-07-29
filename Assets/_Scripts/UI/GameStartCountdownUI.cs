@@ -24,7 +24,7 @@ public class GameStartCountdownUI : MonoBehaviour
     }
     private void Update()
     {
-        int countdownNumber = Mathf.CeilToInt(GameManager.Instance.GetCountdownToStartTimer());
+        int countdownNumber = Mathf.CeilToInt(GameManager.Instance.CountdownToStartTimer);
         _countdownText.text = countdownNumber.ToString();
 
         if (countdownNumber != _previousCountdownNumber )
